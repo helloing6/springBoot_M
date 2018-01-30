@@ -1,4 +1,4 @@
-package com.malei;
+package com.malei.domain.repository;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

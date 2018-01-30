@@ -1,10 +1,11 @@
-package com.malei;
+package com.malei.service;
 
+import com.malei.domain.repository.GrilInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface GirlRepository extends JpaRepository<GrilInfo,Integer>{
+public interface IGirlRepository extends JpaRepository<GrilInfo,Integer>{
 
     /**
      * 通过年龄查询

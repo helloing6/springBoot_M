@@ -1,5 +1,7 @@
-package com.malei;
+package com.malei.controller;
 
+import com.malei.service.IGirlRepository;
+import com.malei.domain.repository.GrilInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,7 +11,7 @@ import java.util.List;
 public class GirlController {
 
     @Autowired
-    private GirlRepository girlRepository;
+    private IGirlRepository girlRepository;
 
     /**
      * 获取女孩列表
