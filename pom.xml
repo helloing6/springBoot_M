@@ -36,7 +36,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- 类似Hibernate -->
+		<!-- 数据库的增删改实现 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
