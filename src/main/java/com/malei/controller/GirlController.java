@@ -1,6 +1,6 @@
 package com.malei.controller;
 
-import com.malei.service.IGirlRepository;
+import com.malei.repository.IGirlRepository;
 import com.malei.domain.repository.GrilInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

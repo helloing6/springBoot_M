@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 
 @Entity
 @Table(name = "userTable")
@@ -14,9 +15,9 @@ public class UserTable {
     private Integer id;
     private String name;  //用户名
     private String sex;   //性别
+    @Min(value = 18,message = "未成年禁止入内")
     private Integer age;  //年龄
     private Integer classId;  //班级id 外键
-    private String classMessage;  //班级名称
 
     public Integer getClassId() {
         return classId;
@@ -58,11 +59,14 @@ public class UserTable {
         this.age = age;
     }
 
-    public String getClassMessage() {
-        return classMessage;
-    }
-
-    public void setClassMessage(String classMessage) {
-        this.classMessage = classMessage;
+    @Override
+    public String toString() {
+        return "UserTable{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", age=" + age +
+                ", classId=" + classId +
+                '}';
     }
 }

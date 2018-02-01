@@ -1,4 +1,4 @@
-package com.malei.service;
+package com.malei.repository;
 
 import com.malei.domain.repository.GrilInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
