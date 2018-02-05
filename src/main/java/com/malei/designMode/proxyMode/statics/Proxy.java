@@ -1,9 +1,9 @@
-package com.malei.proxytest;
+package com.malei.designMode.proxyMode.statics;
 
 /**
  * 代理对象
  */
-public class Proxy implements ISubject{
+public class Proxy implements ISubject {
 
     private final RealSubject realSubject;
 

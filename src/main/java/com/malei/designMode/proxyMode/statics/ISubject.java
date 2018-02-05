@@ -1,4 +1,4 @@
-package com.malei.proxytest;
+package com.malei.designMode.proxyMode.statics;
 
 /**
  * 代理接口

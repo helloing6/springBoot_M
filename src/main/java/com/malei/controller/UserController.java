@@ -1,6 +1,7 @@
 package com.malei.controller;
 
 import com.malei.domain.entity.Result;
+import com.malei.domain.repository.ClassTable;
 import com.malei.domain.repository.UserTable;
 import com.malei.exception.AppException;
 import com.malei.repository.IUserRepository;
@@ -36,7 +37,9 @@ public class UserController {
         info.setName(name);
         info.setSex(sex);
         info.setAge(age);
-        info.setClassId(classId);
+        ClassTable t = new ClassTable();
+        t.setId(classId);
+        info.setTeam(t);
         return userRepository.save(info);
     }
 
@@ -75,7 +78,9 @@ public class UserController {
         info.setName(name);
         info.setSex(sex);
         info.setAge(age);
-        info.setClassId(classId);
+        ClassTable t = new ClassTable();
+        t.setId(classId);
+        info.setTeam(t);
         return userRepository.save(info);
     }
 
@@ -103,6 +108,15 @@ public class UserController {
      */
     @GetMapping(value = "/getUserAge/{id}")
     public UserTable getUserAge(@PathVariable("id") Integer id) throws AppException {
+        return mUserService.getUserAge(id);
+    }
+
+    /**
+     * 获取年龄
+     * @return
+     */
+    @GetMapping(value = "/getUserForAllessage/{id}")
+    public UserTable getUserForAllessage(@PathVariable("id") Integer id) throws AppException {
         return mUserService.getUserAge(id);
     }
 }

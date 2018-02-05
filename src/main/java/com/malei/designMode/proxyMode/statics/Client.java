@@ -1,6 +1,5 @@
-package com.malei.proxytest;
+package com.malei.designMode.proxyMode.statics;
 
-import javax.security.auth.Subject;
 
 /**
  * 客户端

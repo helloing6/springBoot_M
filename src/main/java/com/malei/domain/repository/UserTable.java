@@ -1,9 +1,6 @@
 package com.malei.domain.repository;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 
 @Entity
@@ -17,14 +14,17 @@ public class UserTable {
     private String sex;   //性别
     @Min(value = 18,message = "未成年禁止入内")
     private Integer age;  //年龄
-    private Integer classId;  //班级id 外键
 
-    public Integer getClassId() {
-        return classId;
+    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
+    @JoinColumn(name="classId")
+    private ClassTable team;
+
+    public ClassTable getTeam() {
+        return team;
     }
 
-    public void setClassId(Integer classId) {
-        this.classId = classId;
+    public void setTeam(ClassTable team) {
+        this.team = team;
     }
 
     public Integer getId() {
@@ -66,7 +66,7 @@ public class UserTable {
                 ", name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age=" + age +
-                ", classId=" + classId +
+                ", team=" + team +
                 '}';
     }
 }
